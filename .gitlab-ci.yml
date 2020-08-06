@@ -1,6 +1,6 @@
 # Official language image. Look for the different tagged releases at:
 # https://hub.docker.com/r/library/rust/tags/
-image: "rust:buster"
+image: "rust:latest"
 
 # Optional: Pick zero or more services to be used on all builds.
 # Only needed when using a docker container to run your tests in.
@@ -14,7 +14,7 @@ image: "rust:buster"
 # You will often need this when you (or any of your dependencies) depends on C code.
 before_script:
   - apt-get update -yqq
-  - apt-get install -yqq --no-install-recommends build-essential libaa 
+  - apt-get install -yqq --no-install-recommends build-essential libaa1 libaa1-dev 
 
 # Use cargo to test the project
 test:cargo:
