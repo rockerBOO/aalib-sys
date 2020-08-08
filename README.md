@@ -25,7 +25,7 @@ http://aa-project.sourceforge.net/aalib/
 Using bindgen to make the src/bindings using the aalib `aalib.h`. Only including `aa_` prefixed functions.
 
 ```sh-script
-bindgen .../aalib-1.4.0/src/aalib.h -o src/bindings.rs  --whitelist-function '^aa_.*'
+bindgen ../aalib/src/aalib.h -o src/bindings.rs  --whitelist-function '^aa_.*' --whitelist-var '^mem_d$' --whitelist-var '^save_d$' --whitelist-var '^aa_.*'
 ```
 
 ### Links:

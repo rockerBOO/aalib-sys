@@ -990,10 +990,311 @@ fn bindgen_test_layout_aa_font() {
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
+pub struct aa_format {
+    pub width: ::std::os::raw::c_int,
+    pub height: ::std::os::raw::c_int,
+    pub pagewidth: ::std::os::raw::c_int,
+    pub pageheight: ::std::os::raw::c_int,
+    pub flags: ::std::os::raw::c_int,
+    pub supported: ::std::os::raw::c_int,
+    pub font: *const aa_font,
+    pub formatname: *const ::std::os::raw::c_char,
+    pub extension: *const ::std::os::raw::c_char,
+    pub head: *const ::std::os::raw::c_char,
+    pub end: *const ::std::os::raw::c_char,
+    pub newline: *const ::std::os::raw::c_char,
+    pub prints: [*const ::std::os::raw::c_char; 5usize],
+    pub begin: [*const ::std::os::raw::c_char; 5usize],
+    pub ends: [*const ::std::os::raw::c_char; 5usize],
+    pub conversions: *const *const ::std::os::raw::c_char,
+}
+#[test]
+fn bindgen_test_layout_aa_format() {
+    assert_eq!(
+        ::std::mem::size_of::<aa_format>(),
+        200usize,
+        concat!("Size of: ", stringify!(aa_format))
+    );
+    assert_eq!(
+        ::std::mem::align_of::<aa_format>(),
+        8usize,
+        concat!("Alignment of ", stringify!(aa_format))
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).width as *const _ as usize },
+        0usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(width)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).height as *const _ as usize },
+        4usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(height)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).pagewidth as *const _ as usize },
+        8usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(pagewidth)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).pageheight as *const _ as usize },
+        12usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(pageheight)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).flags as *const _ as usize },
+        16usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(flags)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).supported as *const _ as usize },
+        20usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(supported)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).font as *const _ as usize },
+        24usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(font)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).formatname as *const _ as usize },
+        32usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(formatname)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).extension as *const _ as usize },
+        40usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(extension)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).head as *const _ as usize },
+        48usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(head)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).end as *const _ as usize },
+        56usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(end)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).newline as *const _ as usize },
+        64usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(newline)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).prints as *const _ as usize },
+        72usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(prints)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).begin as *const _ as usize },
+        112usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(begin)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).ends as *const _ as usize },
+        152usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(ends)
+        )
+    );
+    assert_eq!(
+        unsafe { &(*(::std::ptr::null::<aa_format>())).conversions as *const _ as usize },
+        192usize,
+        concat!(
+            "Offset of field: ",
+            stringify!(aa_format),
+            "::",
+            stringify!(conversions)
+        )
+    );
+}
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
 pub struct aa_linkedlist {
     _unused: [u8; 0],
 }
 pub type aa_palette = [::std::os::raw::c_int; 256usize];
+extern "C" {
+    pub static save_d: aa_driver;
+}
+extern "C" {
+    pub static mem_d: aa_driver;
+}
+extern "C" {
+    pub static aa_help: *const ::std::os::raw::c_char;
+}
+extern "C" {
+    pub static mut aa_formats: [*const aa_format; 0usize];
+}
+extern "C" {
+    pub static aa_nhtml_format: aa_format;
+}
+extern "C" {
+    pub static aa_html_format: aa_format;
+}
+extern "C" {
+    pub static aa_html_alt_format: aa_format;
+}
+extern "C" {
+    pub static aa_ansi_format: aa_format;
+}
+extern "C" {
+    pub static aa_text_format: aa_format;
+}
+extern "C" {
+    pub static aa_more_format: aa_format;
+}
+extern "C" {
+    pub static aa_hp_format: aa_format;
+}
+extern "C" {
+    pub static aa_hp2_format: aa_format;
+}
+extern "C" {
+    pub static aa_irc_format: aa_format;
+}
+extern "C" {
+    pub static aa_zephyr_format: aa_format;
+}
+extern "C" {
+    pub static aa_htmlk_format: aa_format;
+}
+extern "C" {
+    pub static mut aa_fonts: [*const aa_font; 0usize];
+}
+extern "C" {
+    pub static aa_font8: aa_font;
+}
+extern "C" {
+    pub static aa_font14: aa_font;
+}
+extern "C" {
+    pub static aa_font16: aa_font;
+}
+extern "C" {
+    pub static aa_font9: aa_font;
+}
+extern "C" {
+    pub static aa_fontline: aa_font;
+}
+extern "C" {
+    pub static aa_fontgl: aa_font;
+}
+extern "C" {
+    pub static aa_fontX13: aa_font;
+}
+extern "C" {
+    pub static aa_fontX16: aa_font;
+}
+extern "C" {
+    pub static aa_fontX13B: aa_font;
+}
+extern "C" {
+    pub static aa_fontcourier: aa_font;
+}
+extern "C" {
+    pub static aa_fontvyhen: aa_font;
+}
+extern "C" {
+    pub static mut aa_dithernames: [*const ::std::os::raw::c_char; 0usize];
+}
+extern "C" {
+    pub static mut aa_drivers: [*const aa_driver; 0usize];
+}
+extern "C" {
+    pub static mut aa_kbddrivers: [*const aa_kbddriver; 0usize];
+}
+extern "C" {
+    pub static mut aa_mousedrivers: [*const aa_mousedriver; 0usize];
+}
+extern "C" {
+    pub static mut aa_kbdrecommended: *mut aa_linkedlist;
+}
+extern "C" {
+    pub static mut aa_mouserecommended: *mut aa_linkedlist;
+}
+extern "C" {
+    pub static mut aa_displayrecommended: *mut aa_linkedlist;
+}
+extern "C" {
+    pub static mut aa_defparams: aa_hardware_params;
+}
+extern "C" {
+    pub static mut aa_defrenderparams: aa_renderparams;
+}
 extern "C" {
     pub fn aa_scrwidth(a: *mut aa_context) -> ::std::os::raw::c_int;
 }
